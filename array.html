@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Arrays</title>
+	<script type="text/javascript">
+		var students = new Array("Uma", "Chaitanya", "Tanneru", "venkata", "Krishna");
+	Array.prototype.displayItems = function(){
+        for(i=0; i<this.length; i++){
+            document.write(this[i]+ "<br />")
+        }
+    }
+	    // find length
+		document.write("students array : ");
+		students.displayItems();
+		document.write("<br />The number of items in students array is " + students.length + "<br />");
+		//sort fn
+		document.write("<br />The SORTED students array<br />");
+		students.sort();
+		students.displayItems();
+		//reverse fn
+		document.write("<br />The REVERSED students array<br />");
+		students.reverse();
+		students.displayItems();
+		//pop fn
+		document.write("<br />THE students array after REMOVING the LAST item<br />");
+		students.pop();
+		students.displayItems();
+		//push fn
+        document.write("<br />THE students array after PUSH<br />");
+        students.push("New Stuff");
+		students.displayItems();
+
+	//Slice
+	var newArray = ["orange", "graphs", "apple", "melons", "guava"]	;
+	var res = newArray.slice(1,3);
+	document.write(res);
+	//Spread
+	document.write(...newArray)	
+	</script>
+</head>
+<body>
+</body>
+</html>

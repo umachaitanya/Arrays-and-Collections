@@ -1,0 +1,68 @@
+<html>
+<title>MENU</title>
+<script>
+    //maps are collection of key-value pairs allows any value irrespective of its type
+    let createFoodMemu = new Map([
+        ["pannerTikka", "240"],
+        ["Biryani", "500"],
+        ["desert", "200"]
+    ]);
+
+    let employees = {
+        "name": "uma",
+        "age": "23"
+    }
+    //sets are special collection allows set of values - where each value may occur only once
+    let set = new Set();
+    let user1 = { name: "user1" };
+    let user2 = { name: "user2" };
+    let user3 = { name: "user3" };
+
+    set.add(user1);
+    set.add(user1);
+    set.add(user1);
+    set.add(user2);
+
+    for (let user of set) {
+        alert(user.name);
+    }
+    alert(set.size);
+    
+    function findFood() {
+        for (let food of createFoodMemu.keys()) {
+            console.log(food);
+            document.write(food + "<br/>");
+        }
+    };
+
+    function findPrice() {
+        for (let price of createFoodMemu.values()) {
+            console.log(price)
+        }
+    };
+
+    function findboth() {
+        for (let both of createFoodMemu) {
+            document.write(both + "<br/>");
+        }
+    };
+    //for each method 
+    createFoodMemu.forEach((value, key) => {
+        document.write(`${key} : ${value}` + "<br />"); // cucumber: 500 etc
+    });
+    //get method in map
+    alert(createFoodMemu.get("desert"))
+
+    //Object.entries returns the array of key-value pairs
+    let empMaps = new Map(Object.entries(employees));
+    alert(empMaps.get('name'))
+
+</script>
+
+<body>
+    <button id="memu-recipies" onclick="findFood()">Memu</button>
+    <button id="memu-price" onclick="findPrice()">Price</button>
+    <button id="food-price" onclick="findboth()">Both</button>
+</body>
+
+</html>
